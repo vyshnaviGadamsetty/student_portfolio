@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>My portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/f31a73ad70.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        
+    <div id="header">
+     <div class="container">
+        <nav>
+          <img src="logo.png" class="logo" > 
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li> 
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul> 
+        
+        </nav>
+        <div class="header-text">
+            <h1>Hi,  I'm <span style="color:#bc1823">Vyshnavi</span></h1>
+            <h6>Welcome, to my portfolio!</h6>
+        </div>
+     </div>
+    </div>
+  <!--about-->
+  <div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+                <h2>About Me</h2>
+                <p style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight:80px ;font-size:18px;background-color: #bc1823;color: #fff;padding:20px 20px;border-radius: 6px;">Hi! I'm VYSHNAVI,
+                    <br> a third-year engineering student specializing in Computer science engineering. I'm passionate about innovation and problem-solving, and I'm excited to continue learning and tackling new engineering challenges.</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+
+                </div>
+                <div class= "tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI/UX</span><br>Designing Websites interfaces</li>
+                   <li><span>Web Development</span><br>Web app development</li>
+                    <li><span>Programming Languages</span><br>C, C++, Python, Js</li>
+                    <li><span>MsOffice</span><br>Word, Powerpoint, Excel</li>
+                </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2022-2026</span><br>Bachelors of Technology in Computer science and engineering at  SRM University, AndhraPradesh, India </li>
+                   <li><span>2022</span><br>Intermediate at Sri Chaitanya </li>
+                    <li><span>2020</span><br>SSC from S.T.B.E.M High School</li>
+                    
+                </ul>
+                </div>
+            </div>
+            <div class="col-2">
+                <img src="aimg1.png" >
+          
+            </div>
+        </div>
+    </div>
+
+  </div>
+  <!--Projects-->
+  <div id="projects">
+    <div class="container">
+        <h2 class="protitle">My Projects</h2>
+        <div class="project-list">
+            <div>
+                <i class="fa-solid fa-clipboard" style="color: #000000;"></i>
+              <h2 class="headings">Customer Billing System</h2>
+              <p class="matter">
+                <ul>
+                   <li>The program takes user input for customer details, total items, and item details
+                    and then generates the bill by calculating the total expenses and checks for the
+                    discounts that can be applicable on it.</li>
+                    <li>Language used: C++</li>
+                </ul>
+              </p>
+
+            </div>
+            <div>
+                <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+                <h2 class="headings">Grocery Store</h2>
+                <p>  <ul>
+                    <li>The grocery store website allows users to input customer details, total items, and item specifics, then generates a bill by calculating total expenses.</li>
+                     <li>Languages used: HTML, CSS, JavaScript.</li>
+                 </ul></p>
+               
+              </div>
+              <div>
+                <i class="fa-solid fa-laptop" style="color: #000000;"></i>
+                <h2 class="headings">Online Examination System</h2>
+                <p>  <ul>
+<li>The online examination system efficiently stores and manages student details, exam data, and results using a robust DBMS. </li>   
+               <li> Languages and tools used: SQL, database management systems.</li>
+                 </ul></p>
+              </div>
+        </div> 
+    </div>
+ 
+  </div>
+  <!--contacts-->
+  <div id="contact">
+    <div class="container">
+        <div class="row">
+        <div class="contact-left">
+        <h2 class="contitle">Contact Me</h2>
+        <p>
+            <a class="contact-icons"
+   href="mailto:srivyshnavigadamsetty@srmap.edu.in" >
+              <i class="fa-solid fa-paper-plane"></i></a>vyshnavigadamsetty@gmail.com
+            
+          </p>
+              <a class="contact-icons" href="tel:9573411121"  > <p><i class="fa-solid fa-phone" ></i></a>9573411121</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/vysh_gadamsetty21/"target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-instagram"></i></i></a> 
+          <a href="www.linkedin.com/in/srivyshnavigadamsetty"target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" ></i></a>
+        </div>
+        <a href="AP22110010632_G.Sri.Vyshnavi.pdf" download="AP22110010632_G.Sri.Vyshnavi.pdf"class="btn btn2">Download Resume</a>
+
+        </div>
+        <div class="contact-right">
+            <form>
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn2">Submit</button>
+            </form>
+            
+        </div>
+    </div>
+<footer>
+    <p>Copyright &copy; Designed by Vyshnavi Gadamsetty </p>
+</footer>
+    </div>
+
+  </div>
+<script>
+    var tablinks=document.getElementsByClassName("tab-links");
+    var tabcontents=document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+
+    }
+</script>
+    </body>
+</html>
