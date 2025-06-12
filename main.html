@@ -5,13 +5,14 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>My portfolio</title>
         <link rel="stylesheet" href="style.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/f31a73ad70.js" crossorigin="anonymous"></script>
     </head>
     <body>
         
     <div id="header">
      <div class="container">
-        <nav>
+        <nav data-aos="fade-down" data-aos-duration="1000">
           <img src="logo.png" class="logo" > 
           <ul>
             <li><a href="#header">Home</a></li>
@@ -21,7 +22,7 @@
           </ul> 
         
         </nav>
-        <div class="header-text">
+        <div class="header-text" data-aos="fade-up" data-aos-duration="1000">
             <h1>Hi,  I'm <span style="color:#bc1823">Vyshnavi</span></h1>
             <h6>Welcome, to my portfolio!</h6>
         </div>
@@ -31,7 +32,7 @@
   <div id="about">
     <div class="container">
         <div class="row">
-            <div class="col-1">
+            <div class="col-1" data-aos="fade-right" data-aos-duration="1000">
                 <h2>About Me</h2>
                 <p style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight:80px ;font-size:18px;background-color: #bc1823;color: #fff;padding:20px 20px;border-radius: 6px;">Hi! I'm VYSHNAVI,
                     <br> a third-year engineering student specializing in Computer science engineering. I'm passionate about innovation and problem-solving, and I'm excited to continue learning and tackling new engineering challenges.</p>
@@ -57,7 +58,7 @@
                 </ul>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-2" data-aos="fade-left" data-aos-duration="1000">
                 <img src="aimg1.png" >
           
             </div>
@@ -68,10 +69,10 @@
   <!--Projects-->
   <div id="projects">
     <div class="container">
-        <h2 class="protitle">My Projects</h2>
+        <h2 class="protitle" data-aos="fade-up" data-aos-duration="1000">My Projects</h2>
         <div class="project-list">
-            <div>
-                <i class="fa-solid fa-clipboard" style="color: #000000;"></i>
+            <div data-aos="zoom-in" data-aos-duration="1000">
+                <i class="fa-solid fa-cash-register" style="color: #000000;"></i>
               <h2 class="headings">Customer Billing System</h2>
               <p class="matter">
                 <ul>
@@ -83,8 +84,8 @@
               </p>
 
             </div>
-            <div>
-                <i class="fa-solid fa-clipboard" style="color: #000000;"></i>
+            <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+                <i class="fa-solid fa-user-graduate" style="color: #000000;"></i>
               <h2 class="headings">Student Attendance System</h2>
               <p class="matter">
                 <ul>
@@ -96,8 +97,8 @@
               </p>
 
             </div>
-            <div>
-                <i class="fa-solid fa-clipboard" style="color: #000000;"></i>
+            <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                <i class="fa-solid fa-film" style="color: #000000;"></i>
               <h2 class="headings">Cineverse</h2>
               <p class="matter">
                 <ul>
@@ -108,8 +109,8 @@
 
             </div>
             
-            <div>
-                <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+            <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+                <i class="fa-solid fa-store" style="color: #000000;"></i>
                 <h2 class="headings">Grocery Store</h2>
                 <p>  <ul>
                     <li>The grocery store website allows users to input customer details, total items, and item specifics, then generates a bill by calculating total expenses.</li>
@@ -117,8 +118,8 @@
                  </ul></p>
                
               </div>
-              <div>
-                <i class="fa-solid fa-laptop" style="color: #000000;"></i>
+              <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+                <i class="fa-solid fa-pen-to-square" style="color: #000000;"></i>
                 <h2 class="headings">Online Examination System</h2>
                 <p>  <ul>
 <li>The online examination system efficiently stores and manages student details, exam data, and results using a robust DBMS. </li>   
@@ -133,7 +134,7 @@
   <div id="contact">
     <div class="container">
         <div class="row">
-        <div class="contact-left">
+        <div class="contact-left" data-aos="fade-right" data-aos-duration="1000">
         <h2 class="contitle">Contact Me</h2>
         <p>
             <a class="contact-icons"
@@ -149,23 +150,26 @@
         <a href="AP22110010632_G.Sri.Vyshnavi.pdf" download="AP22110010632_G.Sri.Vyshnavi.pdf"class="btn btn2">Download Resume</a>
 
         </div>
-        <div class="contact-right">
-            <form>
-                <input type="text" name="Name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+        <div class="contact-right" data-aos="fade-left" data-aos-duration="1000">
+            <form id="contactForm" onsubmit="submitForm(event)">
+                <input type="text" name="Name" id="name" placeholder="Your Name" required>
+                <input type="email" name="email" id="email" placeholder="Your Email" required>
+                <textarea name="Message" id="message" rows="6" placeholder="Your Message" required></textarea>
                 <button type="submit" class="btn2">Submit</button>
             </form>
-            
+            <div id="formStatus" style="margin-top: 10px; display: none;"></div>
         </div>
     </div>
-<footer>
+<footer data-aos="fade-up" data-aos-duration="1000">
     <p>Copyright &copy; Designed by Vyshnavi Gadamsetty </p>
 </footer>
     </div>
 
   </div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+    AOS.init();
+    
     var tablinks=document.getElementsByClassName("tab-links");
     var tabcontents=document.getElementsByClassName("tab-contents");
     function opentab(tabname){
@@ -177,7 +181,48 @@
         }
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
+    }
 
+    // Contact Form Submission
+    function submitForm(e) {
+        e.preventDefault();
+        
+        const formStatus = document.getElementById('formStatus');
+        formStatus.style.display = 'block';
+        formStatus.innerHTML = 'Sending...';
+        formStatus.style.color = '#666';
+
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value,
+            timestamp: new Date().toLocaleString()
+        };
+
+        // Replace with your Google Apps Script Web App URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbykC7mgkVaPJd5ebk_500LKUC4j11jQGsGRxfYSYvRiKZ1rlA_l39wjJQhaaO5T2uVTzA/exec';
+        
+        fetch(scriptURL, {
+            method: 'POST',
+            body: JSON.stringify(formData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                formStatus.innerHTML = 'Message sent successfully!';
+                formStatus.style.color = '#4CAF50';
+                document.getElementById('contactForm').reset();
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        })
+        .catch(error => {
+            formStatus.innerHTML = 'Error sending message. Please try again.';
+            formStatus.style.color = '#bc1823';
+            console.error('Error:', error);
+        });
     }
 </script>
     </body>

@@ -307,3 +307,127 @@ footer{
     margin-top:50px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+/* Add smooth scrolling to the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigation hover effects */
+nav ul li a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #bc1823;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Project cards hover effect */
+.project-list div {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.project-list div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Social icons hover effect */
+.social-icons a {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* Contact form input focus effects */
+.contact-right input,
+.contact-right textarea {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-right input:focus,
+.contact-right textarea:focus {
+    border-color: #bc1823;
+    box-shadow: 0 0 5px rgba(188, 24, 35, 0.3);
+}
+
+/* Button hover effect */
+.btn, .btn2 {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover, .btn2:hover {
+    transform: scale(1.05);
+}
+
+/* Header text animation */
+.header-text h1 {
+    animation: fadeInDown 1s ease;
+}
+
+.header-text h6 {
+    animation: fadeInUp 1s ease 0.5s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Smooth transition for tab content */
+.tab-contents {
+    transition: opacity 0.3s ease;
+}
+
+/* Logo hover effect */
+.logo {
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Contact icons hover effect */
+.contact-icons {
+    transition: color 0.3s ease;
+}
+
+.contact-icons:hover {
+    color: #bc1823;
+}
