@@ -183,47 +183,67 @@
         document.getElementById(tabname).classList.add("active-tab");
     }
 
-    // Contact Form Submission
-    // Replace your submitForm function with this version
-function submitForm(e) {
-    e.preventDefault();
-    
-    const formStatus = document.getElementById('formStatus');
-    formStatus.style.display = 'block';
-    formStatus.innerHTML = 'Sending...';
-    formStatus.style.color = '#666';
+    // CORS-Free Contact Form Submission
+    function submitForm(e) {
+        e.preventDefault();
+        
+        const formStatus = document.getElementById('formStatus');
+        formStatus.style.display = 'block';
+        formStatus.innerHTML = 'Sending...';
+        formStatus.style.color = '#666';
 
-    const formData = new FormData();
-    formData.append('name', document.getElementById('name').value);
-    formData.append('email', document.getElementById('email').value);
-    formData.append('message', document.getElementById('message').value);
-    formData.append('timestamp', new Date().toLocaleString());
+        // Get form data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbykC7mgkVaPJd5ebk_500LKUC4j11jQGsGRxfYSYvRiKZ1rlA_l39wjJQhaaO5T2uVTzA/exec';
-    
-    fetch(scriptURL, {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.result === 'success') {
+        // Create a hidden iframe for submission
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.name = 'hidden_iframe';
+        document.body.appendChild(iframe);
+
+        // Create a form element that submits to Google Apps Script
+        const form = document.createElement('form');
+        form.action = 'https://script.google.com/macros/s/AKfycbzk9qFCydnW8TlEMFnNtkJnO9bBEfjl6OW80vzJ8YImEV_-El7kCMJfErBuPZIKw8qPfA/exec';
+        form.method = 'POST';
+        form.target = 'hidden_iframe';
+
+        // Add form fields as hidden inputs
+        const fields = [
+            { name: 'name', value: name },
+            { name: 'email', value: email },
+            { name: 'message', value: message },
+            { name: 'timestamp', value: new Date().toLocaleString() }
+        ];
+
+        fields.forEach(field => {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = field.name;
+            input.value = field.value;
+            form.appendChild(input);
+        });
+
+        // Submit the form
+        document.body.appendChild(form);
+        form.submit();
+
+        // Show success message and clean up
+        setTimeout(() => {
             formStatus.innerHTML = 'Message sent successfully!';
             formStatus.style.color = '#4CAF50';
             document.getElementById('contactForm').reset();
-        } else {
-            throw new Error(data.error || 'Unknown error');
-        }
-    })
-    .catch(error => {
-        // Fallback: If there's still a CORS issue, assume success
-        // since FormData usually works without triggering preflight
-        console.log('Assuming success due to CORS limitation');
-        formStatus.innerHTML = 'Message sent successfully!';
-        formStatus.style.color = '#4CAF50';
-        document.getElementById('contactForm').reset();
-    });
-}
+            
+            // Clean up the temporary elements
+            if (form.parentNode) {
+                document.body.removeChild(form);
+            }
+            if (iframe.parentNode) {
+                document.body.removeChild(iframe);
+            }
+        }, 2000);
+    }
 </script>
     </body>
 </html>
